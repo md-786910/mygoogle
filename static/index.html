@@ -150,22 +150,16 @@
     spinner.style.display = "none";
 
     // here apply for recording voice
-    let valueOfText;
     window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
 
     recognition = new window.SpeechRecognition();
     recognition.onresult = (event) => {
         const speechToText = event.results[0][0].transcript;
 
-        if (speechToText = "") {
-            alert("please search query..");
-        }
-        else {
-            searchText.value = speechToText;
-            setTimeout(() => {
-                OurgoogleFunction();
-            }, 3000)
-        }
+        searchText.value = speechToText;
+        setTimeout(() => {
+            OurgoogleFunction();
+        }, 3000)
     }
 
 
